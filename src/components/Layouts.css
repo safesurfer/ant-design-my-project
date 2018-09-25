@@ -1,0 +1,38 @@
+.trigger {
+    font-size: 26px;
+    line-height: 64px;
+    padding: 0 24px;
+    float: left;
+    cursor: pointer;
+    transition: color .3s;
+  }
+  
+  .trigger:hover {
+    color: #1890ff;
+  }
+  
+  .logo {
+    height: 50px;
+    background: rgba(255,255,255,.2);
+    margin: 0;
+  }
+
+  .logo h1 {
+      float: left;
+      padding: 10px;
+      color: white;
+      font-size: 18px;
+  }
+
+  .logo img {
+      height: 10%;
+      width: 10%;
+  }
+
+  #item {
+      float: left;
+  }
+
+  .date {
+      float: right;
+  }
