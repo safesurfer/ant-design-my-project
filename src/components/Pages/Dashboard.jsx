@@ -13,7 +13,7 @@ const dateFormat = "DD/MM/YYYY";
 class Dashboard extends Component {
   render() {
     return (
-      <div></div>
+      <Tables />
     );
   }
 }

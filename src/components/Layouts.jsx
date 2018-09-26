@@ -100,15 +100,12 @@ class Layouts extends Component {
               minHeight: 280
             }}
           >
-            Content
+            <Route path="/" exact component={Dashboard} />
+            <Route path="/nat" component={NatType} />
+            <Route path="/protocol" component={Protocol} />
+            <Route path="/connect" component={ConnectionAttempts} />
           </Content>
         </Layout>
-        <div>
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/nat" component={NatType} />
-          <Route path="/protocol" component={Protocol} />
-          <Route path="/connect" component={ConnectionAttempts} />
-        </div>
       </Layout>
     );
   }
