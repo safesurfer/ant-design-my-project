@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import { Layout, Menu, Icon, DatePicker } from "antd";
-import moment from 'moment';
-import Tables from "./Tables";
+import { Link, Route } from "react-router-dom";
+import moment from "moment";
+
+import logo from "../assets/logo.png";
+import Dashboard from "./Pages/Dashboard";
+import NatType from "./Pages/NatType";
 import "./Layouts.css";
+import ConnectionAttempts from "./Pages/ConnectionAttempts";
+import Protocol from "./Pages/Protocol";
 
 const { Header, Sider, Content } = Layout;
 const { RangePicker } = DatePicker;
 
-const dateFormat = 'DD/MM/YYYY';
+const dateFormat = "DD/MM/YYYY";
 
 class Layouts extends Component {
   state = {
@@ -22,45 +28,53 @@ class Layouts extends Component {
 
   render() {
     return (
-      <Layout>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+      <Layout style={{ minHeight: 900 }}>
+        <Sider
+          trigger={null}
+          collapsible
+          collapsed={this.state.collapsed}
+          width={256}
+        >
           <div className="logo">
-            {/* <img src="safe-network-icon-white.png" alt="no pic"/> */}
+            <img src={logo} alt="logo" />
             <h1>CRUST TESTNET</h1>
           </div>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1">
-              <span id="item">
-                <Icon type="dashboard" />
-                <span>Dashboard</span>
-              </span>
+              <Link to="/">
+                <span id="item">
+                  <Icon type="dashboard" />
+                  <span>Dashboard</span>
+                </span>
+              </Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <span id="item">
-                <Icon type="retweet" />
-                <span>NAT Type</span>
-              </span>
+              <Link to="/nat">
+                <span id="item">
+                  <Icon type="retweet" />
+                  <span>NAT Type</span>
+                </span>
+              </Link>
             </Menu.Item>
             <Menu.Item key="3">
-              <span id="item">
-                <Icon type="arrow-up" />
-                <span>Protocol</span>
-              </span>
+              <Link to="/protocol">
+                <span id="item">
+                  <Icon type="arrow-up" />
+                  <span>Protocol</span>
+                </span>
+              </Link>
             </Menu.Item>
             <Menu.Item key="4">
-              <span id="item">
-                <Icon type="warning" />
-                <span>Failed Connections</span>
-              </span>
-            </Menu.Item>
-            <Menu.Item key="5">
-              <span id="item">
-                <Icon type="clock-circle" />
-                <span>History</span>
-              </span>
+              <Link to="/connect">
+                <span id="item">
+                  <Icon type="warning" />
+                  <span>Connection Attempts</span>
+                </span>
+              </Link>
             </Menu.Item>
           </Menu>
         </Sider>
+
         <Layout>
           <Header style={{ background: "#fff", padding: 0 }}>
             <Icon
@@ -86,10 +100,15 @@ class Layouts extends Component {
               minHeight: 280
             }}
           >
-            <img src="safe-network-icon-white.png" alt="" />
-            <Tables />
+            Content
           </Content>
         </Layout>
+        <div>
+          <Route path="/" exact component={Dashboard} />
+          <Route path="/nat" component={NatType} />
+          <Route path="/protocol" component={Protocol} />
+          <Route path="/connect" component={ConnectionAttempts} />
+        </div>
       </Layout>
     );
   }

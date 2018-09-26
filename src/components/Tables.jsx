@@ -1,18 +1,9 @@
 import React, { Component } from "react";
 import {
-  Row,
-  Col,
-  Icon,
   Card,
-  Button,
-  Tabs,
   Table,
   Radio,
-  Form,
-  DatePicker,
-  Tooltip,
-  Menu,
-  Dropdown
+  Form
 } from "antd";
 
 import './Tables.css';
@@ -97,9 +88,6 @@ const columns = [
 ];
 
 class Tables extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
@@ -114,7 +102,6 @@ class Tables extends Component {
           </FormItem>
         </span>
         <Table dataSource={dataSource} columns={columns} />
-        <Button>Hello</Button>
       </Card>
     );
   }
