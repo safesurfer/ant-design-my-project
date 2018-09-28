@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Menu, Icon, DatePicker, Card } from "antd";
+import { Layout, Menu, Icon, DatePicker } from "antd";
 import { Link, Route } from "react-router-dom";
 import moment from "moment";
 
@@ -13,7 +13,7 @@ import Protocol from "../Pages/Protocol";
 const { Header, Sider, Content } = Layout;
 const { RangePicker } = DatePicker;
 
-const dateFormat = "DD/MM/YYYY";
+const dateFormat = "YYYY/MM/DD";
 
 class Layouts extends Component {
   state = {
