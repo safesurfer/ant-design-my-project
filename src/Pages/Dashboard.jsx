@@ -4,6 +4,7 @@ import { Row, Col, Card } from "antd";
 import Tables from "../components/Tables";
 import Charts from "../components/Charts";
 import "./Dashboard.css";
+import ButtonGroup from "../components/ButtonGroup";
 
 const topColResponsiveProps = {
   xs: 24,
@@ -71,6 +72,7 @@ class Dashboard extends Component {
                 minHeight: 280
               }}
             >
+              <span><ButtonGroup /></span>
               <Tables />
             </Card>
           </Col>

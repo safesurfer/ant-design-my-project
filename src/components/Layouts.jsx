@@ -39,7 +39,7 @@ class Layouts extends Component {
             <img src={logo} alt="logo" />
             <h1>CRUST TESTNET</h1>
           </div>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
+          <Menu theme="dark" mode="inline">
             <Menu.Item key="1">
               <Link to="/">
                 <span id="item">

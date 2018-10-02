@@ -5,24 +5,19 @@ import Tables from "../components/Tables";
 import Charts from "../components/Charts";
 import TabComp from "../components/TabComp";
 import "./Dashboard.css";
-
-const topColResponsiveProps = {
-  xs: 24,
-  sm: 24,
-  md: 24,
-  lg: 8,
-  xl: 8
-};
+import ButtonGroup from "../components/ButtonGroup";
 
 class ConnectionAttempts extends Component {
   render() {
     return (
       <div className="gutter-example">
-      <h1 style={{padding: "10px 0px 0px 30px"}}>Connection Attempts</h1>
-      <span>
-      Connection result: 
+        <span>
+          <h1 style={{ padding: "10px 0px 0px 30px", display: "inline" }}>Connection Attempts </h1>
+          <span style={{ float: "right", padding: "10px 20px 0px 0px"}}>
+            Connection result: <ButtonGroup />
+          </span>
+        </span>
 
-      </span>
         <Row gutter={24} style={{ margin: "24px 8px" }}>
           <Col className="gutter-row" span={24}>
             <Card
@@ -32,8 +27,8 @@ class ConnectionAttempts extends Component {
                 minHeight: 100
               }}
             >
-            <TabComp />
-          </Card>
+              <TabComp />
+            </Card>
           </Col>
         </Row>
         <Row gutter={24} style={{ margin: "24px 8px" }}>
