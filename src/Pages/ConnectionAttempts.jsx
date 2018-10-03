@@ -31,7 +31,7 @@ class ConnectionAttempts extends Component {
             </Card>
           </Col>
         </Row>
-        <Row gutter={24} style={{ margin: "24px 8px" }}>
+        {/* <Row gutter={24} style={{ margin: "24px 8px" }}>
           <Col className="gutter-row" span={24}>
             <Card
               style={{
@@ -43,7 +43,7 @@ class ConnectionAttempts extends Component {
               <Charts />
             </Card>
           </Col>
-        </Row>
+        </Row> */}
         <Row gutter={24} style={{ margin: "24px 8px" }}>
           <Col className="gutter-row" span={24}>
             <Card

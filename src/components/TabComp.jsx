@@ -3,6 +3,7 @@ import { Tabs, Row, Col, Dropdown, Button, Icon, Menu, Card } from "antd";
 
 import Charts from "./Charts";
 import data from "../assets/data";
+import LineCharts from "./LineCharts";
 
 const TabPane = Tabs.TabPane;
 
@@ -136,6 +137,13 @@ class TabComp extends Component {
                 </Col>
               </Col>
             </Row>
+            <Card>
+              <Row>
+                <Col>
+                  <LineCharts />
+                </Col>
+              </Row>
+            </Card>
           </TabPane>
           <TabPane tab="Country" key="2">
             <Row gutter={24} style={{ margin: "24px 8px" }}>

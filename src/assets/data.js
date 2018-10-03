@@ -5,7 +5,7 @@ const logs = [
       peer_requester: {
         ip: "182.74.140.194",
         nat_type: "EIM",
-        os: "win64",
+        os: "Windows",
         geo_info: {
           region: "Karnataka",
           region_code: "KA",
@@ -16,7 +16,7 @@ const logs = [
       peer_responder: {
         ip: "84.160.11.231",
         nat_type: "EDM",
-        os: "win",
+        os: "Windows",
         geo_info: {
           region: "Baden-Württemberg Region",
           region_code: "BW",
@@ -40,7 +40,7 @@ const logs = [
       peer_requester: {
         ip: "182.74.140.194",
         nat_type: "EIM",
-        os: "win64",
+        os: "Windows",
         geo_info: {
           region: "Karnataka",
           region_code: "KA",

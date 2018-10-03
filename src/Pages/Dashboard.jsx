@@ -4,7 +4,9 @@ import { Row, Col, Card } from "antd";
 import Tables from "../components/Tables";
 import Charts from "../components/Charts";
 import "./Dashboard.css";
-import ButtonGroup from "../components/ButtonGroup";
+import PieCharts from "../components/PieCharts";
+import MiniAreas from "../components/MiniAreas";
+import data from '../assets/data'
 
 const topColResponsiveProps = {
   xs: 24,
@@ -13,6 +15,58 @@ const topColResponsiveProps = {
   lg: 8,
   xl: 8
 };
+
+const natData = [
+  {
+    type: "EDM",
+    value: 2401
+  },
+  {
+    type: "EIM",
+    value: 2305
+  },
+  {
+    type: "EDM-R",
+    value: 2617
+  },
+  {
+    type: "EDM/EIM",
+    value: 1290
+  },
+  {
+    type: "EDM/EDM-R",
+    value: 970
+  },
+  {
+    type: "EIM/EDM-R",
+    value: 540
+  }
+];
+
+natData.sort((m, n) => m.value < n.value);
+
+const protocolData = [
+  {
+    type: "TCP D",
+    value: 440
+  },
+  {
+    type: "TCP HP",
+    value: 3593
+  },
+  {
+    type: "uTP HP",
+    value: 249
+  }
+];
+
+protocolData.sort((m, n) => m.value < n.value);
+
+const listCountry = data.globalNetworkActivity.map((coun, i) => (
+  <li>
+    {coun.x} {coun.y}
+  </li>
+));
 
 class Dashboard extends Component {
   render() {
@@ -28,39 +82,46 @@ class Dashboard extends Component {
                 minHeight: 500
               }}
             >
-              <Charts />
+              <Charts
+                values={listCountry}
+                dataSource={data.globalNetworkActivity}
+                interval={1000}
+              />
             </Card>
           </Col>
         </Row>
         <Row gutter={24} style={{ margin: "24px 8px" }}>
           <Col className="gutter-row" span={8} {...topColResponsiveProps}>
             <Card
+              title="NAT Type"
               style={{
                 background: "#fff",
-                minHeight: 280
+                minHeight: 350
               }}
             >
-              <div className="gutter-box">col-8</div>
+              <PieCharts data={natData} title="NAT Type" />
             </Card>
           </Col>
           <Col className="gutter-row" span={8} {...topColResponsiveProps}>
             <Card
+              title="Protocol"
               style={{
                 background: "#fff",
-                minHeight: 280
+                minHeight: 350
               }}
             >
-              <div className="gutter-box">col-8</div>
+              <PieCharts data={protocolData} title="Protocol" />
             </Card>
           </Col>
           <Col className="gutter-row" span={8} {...topColResponsiveProps}>
             <Card
+              title="Connection Attempts"
               style={{
                 background: "#fff",
-                minHeight: 280
+                minHeight: 350
               }}
             >
-              <div className="gutter-box">col-8</div>
+              <MiniAreas />
             </Card>
           </Col>
         </Row>
@@ -72,7 +133,6 @@ class Dashboard extends Component {
                 minHeight: 280
               }}
             >
-              <span><ButtonGroup /></span>
               <Tables />
             </Card>
           </Col>
